@@ -3,43 +3,38 @@ import { updateScheduleHours } from '../../services/schedule'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import data from './data.json'
+import axios from 'axios';
+
 toast.configure()
 function Dashboard() {
+
     const [scheduleHours, setScheduleHours] = useState([])
-    const [time, setTime] = useState({
-        day: '',
-        open: '',
-        close: ''
-    })
 
     useEffect(() => {
-        const response = [
-            {
-                day: 'Monday',
-                open: '1 AM',
-                close: '2 AM',
-            },
-            {
-                day: 'Tuesday',
-                open: '1 AM',
-                close: '2 AM',
-            },
-        ];
+        const response = data
         setScheduleHours(response);
+        loadUser()
     }, []);
+
+    const loadUser = () => {
+
+        axios.get('businesshours').then(res => {
+            console.log(res)
+        })
+    }
+
     const onChangehandler = (e, item) => {
         const day = item.day;
         const name = e.target.name;
         const value = e.target.value;
-
         const updatedScheduleHours = scheduleHours.map(scheduleHour => {
             if (scheduleHour.day === day) {
                 let open = scheduleHour.open;
                 let close = scheduleHour.close;
-                if (name == 'open') {
+                if (name === 'open') {
                     open = value;
                 }
-                if (name == 'close') {
+                if (name === 'close') {
                     close = value;
                 }
                 return {
@@ -68,7 +63,7 @@ function Dashboard() {
             }
         })
     }
-    const { day, open, close } = time
+    // const { day, open, close } = time
     return (<div style={{ textAlign: 'center', marginTop: 40 }}>
         <span style={{ marginLeft: 50 }}>Open</span>
         <span style={{ marginLeft: 50 }}>Close</span>

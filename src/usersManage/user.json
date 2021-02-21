@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "firstName": "Akshay",
+        "lastNmae": "Garg"
+    },
+    {
+        "id": 2,
+        "firstName": "Amitesh",
+        "lastNmae": "Gupta"
+    },
+    {
+        "id": 3,
+        "firstName": "Ankur",
+        "lastNmae": "Parmar"
+    },
+    {
+        "id": 4,
+        "firstName": "Jitendar",
+        "lastNmae": "Chauhan"
+    },
+    {
+        "id": 5,
+        "firstName": "Jitendar",
+        "lastNmae": "Chauhan"
+    },
+    {
+        "id": 7,
+        "firstName": "Jitendar",
+        "lastNmae": "Chauhan"
+    }
+]

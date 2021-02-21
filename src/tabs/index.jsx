@@ -148,7 +148,8 @@ export default function ScrollableTabsButtonAuto() {
                     <UserList />
                 </Grid>
                 <Grid item xs={8}>
-                    {validationError1 ? <Alert severity="error">  {error}</Alert> : null}
+                    {/* <Alert severity="error">{error} </Alert> */}
+                    <div style={{ background: 'red', padding: 5 }}>{error} </div>
 
                     <AppBar position="static" color="default">
 
